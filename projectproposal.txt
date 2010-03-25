@@ -1,0 +1,83 @@
+Our goal is to make a robot that will play Guitar Hero or Rock Band.
+
+Here is a video of the game:
+
+This is a video of Rock Band.  The difference is that it has rectangular notes instead of circular ones.  This could be easier.
+http://www.youtube.com/watch?v=Obm_5YF9Iuk
+
+Here are some past attempts at a similar project:
+http://www.youtube.com/watch?v=VLQhX0nZV6I
+
+This robot will need to:
+Recognize when to hit the buttons and when to strum.
+Time everything correctly (the fret buttons need to be pressed slightly before the strum bar).
+
+
+Levels of difficulty:
+Depending on how much time we have and how hard the project turns out being, these are the levels of difficulty the project could have:
+
+If we have a terrible time building the project and nothing works the way we hope, the most basic thing to get done is to have the system take a video feed of the game from an emulator on the computer and output when each note should be pressed, perhaps with a little gui program.  This wouldn't really be that impressive, since it would basically be telling a human when to play each note.  This would have a very good input images, being clean images directly from the game.
+
+A step up from that would be to use a webcam and get the video feed from the camera.  This sort of robot would be able to play a live game on a real system hooked up to a TV.  The addition of the webcam would add a lot of noise to the images, increasing the difficulty.
+
+The next step would be to have the system actually press the keys on the guitar to play the game.  We would hook our program up to a microcontroller with solenoid motors to press the keys.
+
+If we got this part to work, the next step is to incorporate star power.
+Other bonus features that would be cool would be:
+Recognize star power meter and use it at an appropriate time
+Have the system locate its note "trough" on the screen as opposed to the other players' troughs.
+
+Distinguishing between small notes and large notes
+Recognizing when to play each note
+
+
+Complications:
+Notes that are held appear as a note with a line extending from it, and the note must be held for the entire time in order to get points.
+The position of the guitar part on the screen can vary from game to game, depending on whether other instruments are playing and which player number the robot is.
+There can be multiple guitars or a combination of guitar and bass, which appear the same on the screen, so it must be able to determine which is the correct part to play.
+Line oscillates when using the whammy bar.
+There are a lot of glow effects and visual noise.
+When you are playing a phrase of the song that can give you star power, all the notes appear white instead of their normal distinct colors.
+Having star power creates a golden pattern on the fretboard that makes the part more visually chaotic.
+
+
+Computer Vision Aspects:
+Use some form of Hough Transformation to find notes and lines
+     Lines
+        Lines that indicate holding a note can occur in five different positions
+        Length and position must be recognized
+    Notes
+        Notes can occur in five different positions horizontally
+        Notes in different positions are usually different colors, although not always
+            so shape must be used to recognize the notes
+            also notes grow as they become "closer" adding another level of complexity
+        Several different types of notes can occur within one horizontal position and can be treated differently
+            different types of notes are a different shape
+                smaller notes do not require the player to strum
+                larger notes do require strumming
+    Because of the specific nature of the hough transforms required, we would probably need to write our own hough transform
+If we make it so it can find the  screen, we will also need to identify the note trough and the star power meter
+    This would be another level of complexity if the previous section proved too easy for a term project.
+        It would require a large amount of analysis to find the size and extent of the board for that instrument, regardless of background noise
+We would also have to ignore a large amount of visual noise and analyze the input images quick enough for the robot to react in time to play the notes
+
+
+0:15-1:50 Basic ideas of the guitar part and example
+
+Feel free to watch the rest of the video, but it is painful to listen to at points.
+
+Parts needed:
+1 Arduino microcontroller
+Wires
+8 solenoids
+8 solid state relays
+Breadboard
+
+
+Saturday March 13, 2010 04:31:06 PM
+Spent $11.25 on one push and one pull solenoid
+                                                                                                                                      
+                                                                                                                                      
+                                                                                                                                      
+
+
