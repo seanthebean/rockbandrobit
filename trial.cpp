@@ -25,6 +25,8 @@ int main(int argc, char *argv[]){
 	cvShowImage("Sobel Image",sobelImg);
 
 	cvWaitKey(0);
+
+	cvSaveImage(argv[4],sobelImg);
 	
 	//Release images and destroy windows
 	cvDestroyWindow("Source");
