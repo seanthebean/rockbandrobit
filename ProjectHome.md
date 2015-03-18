@@ -1,0 +1,1 @@
+Software to drive a mechanical robot that manipulates a Rock Band game controller after using a camera to watch the game.
